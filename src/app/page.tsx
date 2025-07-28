@@ -13,7 +13,7 @@ export default function Home() {
         className="w-full bg-black flex flex-col justify-end relative"
         style={{ zIndex: 40 }}
       >
-        <div className="px-10 pb-0 h-full flex flex-col justify-end">
+        <div className="px-10 pb-0 h-full flex flex-col justify-end /">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: -50 }}
