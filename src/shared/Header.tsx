@@ -1,48 +1,25 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React from "react";
 
 export const Header = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="p-10 flex justify-between items-center text-white fixed w-full top-0 left-0 z-50 bg-black/80 backdrop-blur-sm"
-    >
-      <Link
-        href="/"
-        className="text-2xl font-bold hover:text-yellow-400 transition-colors"
-      >
-        HZcompany
-      </Link>
-
-      <div className="flex gap-8 text-right ml-auto text-lg">
-        <Link
-          href="/join-us"
-          className="hover:text-yellow-400 transition-colors"
-        >
-          Join us
-        </Link>
-        <Link
-          href="/contact"
-          className="hover:text-yellow-400 transition-colors"
-        >
-          Contacts
-        </Link>
-        <Link
-          href="/projects"
-          className="hover:text-yellow-400 transition-colors"
-        >
-          Projects
-        </Link>
-        <Link href="/team" className="hover:text-yellow-400 transition-colors">
-          Team
-        </Link>
-        <Link href="/about" className="hover:text-yellow-400 transition-colors">
-          About us
-        </Link>
+    <div className="flex justify-between">
+      <div className="w-20 h-10 relative">
+        <div className="w-11 h-5 left-[43.08px] top-0 absolute bg-black border border-black" />
+        <div className="w-10 h-5 left-[21.54px] top-[40px] absolute origin-top-left -rotate-90 bg-black border border-black" />
+        <div className="w-10 h-5 left-0 top-[40px] absolute origin-top-left -rotate-90 bg-black border border-black" />
+        <div className="w-11 h-5 left-[43.08px] top-[21.54px] absolute bg-black border border-black" />
       </div>
-    </motion.div>
+      <div data-property-1="Default" className="w-20 h-5 relative">
+        <div className="w-20 h-px left-0 top-0 absolute bg-black" />
+        <div className="w-20 h-px left-0 top-[9px] absolute bg-black" />
+        <div className="w-20 h-px left-0 top-[18px] absolute bg-black" />
+      </div>
+      <a
+        className="hidden sm:block cursor-pointer justify-start text-black text-base font-normal font-['Cygre'] underline leading-none"
+        href="mailto:hzcompany@gmail.com"
+      >
+        hzcompany@gmail.com
+      </a>
+    </div>
   );
 };

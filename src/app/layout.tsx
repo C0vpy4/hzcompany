@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Header } from "@/shared/Header";
 import "./globals.css";
+import { Header } from "@/shared";
 
 export const viewport = {
   width: "device-width",
@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
-      <body className="min-h-screen bg-[#FED702] font-sans antialiased">
+    <html lang="ru" className="">
+      <body className="min-h-screen h-full font-cygre antialiased sm:px-20 px-2 py-10  ">
         <Header />
         {children}
       </body>
