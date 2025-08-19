@@ -13,25 +13,25 @@ export const Footer = () => {
               +79685462359
             </div>
             <a
-              href="#"
+              href="#fact"
               className="block text-black text-base font-['Cygre_Book'] lowercase"
             >
               о нас
             </a>
             <a
-              href="#"
+              href="/products"
               className="block text-black text-base font-['Cygre_Book'] lowercase"
             >
               продукты
             </a>
             <a
-              href="#"
+              href="/vacancies"
               className="block text-black text-base font-['Cygre_Book'] lowercase"
             >
               вакансии
             </a>
             <a
-              href="#"
+              href="#form"
               className="block text-black text-base font-['Cygre_Book'] lowercase"
             >
               заказать проект
@@ -39,7 +39,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:col-span-7 ml-auto">
-            <div className="mt-4 grid grid-cols-5 sm:grid-cols-2 gap-4 justify-items-end">
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-2 gap-4 justify-items-center sm:justify-items-end">
               <a
                 href="#"
                 aria-label="VK"
@@ -50,7 +50,7 @@ export const Footer = () => {
                 vk
               </a>
               <a
-                href="#"
+                href="https://t.me/hzcompanypr"
                 aria-label="Telegram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export const Footer = () => {
                 tg
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@hzpank"
                 aria-label="YouTube"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,7 +68,7 @@ export const Footer = () => {
                 yt
               </a>
               <a
-                href="#"
+                href="https://x.com/hzpank"
                 aria-label="X"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export const Footer = () => {
                 x
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/hzpank/"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"

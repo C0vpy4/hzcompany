@@ -38,7 +38,7 @@ export const Form = () => {
   }
 
   return (
-    <div className="w-full font-['Cygre']">
+    <div className="w-full font-['Cygre']" id="form">
       <form
         onSubmit={handleSubmit}
         className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10"

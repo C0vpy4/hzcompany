@@ -13,7 +13,7 @@ export const Fact = () => {
   const y = useSpring(yRange, { stiffness: 200, damping: 20, mass: 0.2 });
   const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
   return (
-    <div>
+    <div id="fact">
       <div
         ref={sectionRef}
         className="font-['Cygre'] relative  flex flex-col items-start justify-start px-4 sm:px-20 "

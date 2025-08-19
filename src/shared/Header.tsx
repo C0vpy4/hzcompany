@@ -88,7 +88,7 @@ export const Header = () => {
           className="hidden sm:block cursor-pointer justify-start text-black text-base font-normal font-['Cygre'] underline leading-none"
           href="mailto:hzcompany@gmail.com"
         >
-          hzcompany@gmail.com
+          hzcompanyteam@gmail.com
         </a>
 
         <AnimatePresence>
@@ -126,10 +126,10 @@ export const Header = () => {
 
                 <div className="flex flex-col items-center justify-center space-y-4">
                   <a
-                    href="mailto:hzcompany@gmail.com"
+                    href="mailto:hzcompanyteam@gmail.com"
                     className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
                   >
-                    hzcompany@gmail.com
+                    hzcompanyteam@gmail.com
                   </a>
                   <a
                     href="tel:+79252283698"
@@ -139,31 +139,26 @@ export const Header = () => {
                   </a>
                   <div className="flex items-center justify-center  flex-col space-y-4">
                     <a
-                      href="#"
+                      href="https://t.me/hzcompanypr"
                       className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
                     >
                       telegram
                     </a>
+
                     <a
-                      href="#"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
-                    >
-                      vk
-                    </a>
-                    <a
-                      href="#"
+                      href="https://www.instagram.com/hzpank/"
                       className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
                     >
                       instagram
                     </a>
                     <a
-                      href="#"
+                      href="https://x.com/hzpank"
                       className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
                     >
                       x
                     </a>
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@hzpank"
                       className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
                     >
                       youtube
