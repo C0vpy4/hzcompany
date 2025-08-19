@@ -7,9 +7,47 @@ import { sendEmail } from "@/app/actions";
 export const Form = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) newErrors.name = "Укажите ваше имя";
+    if (!formData.company.trim()) newErrors.company = "Укажите вашу компанию";
+    if (!formData.email.trim()) newErrors.email = "Укажите email";
+    if (!formData.phone.trim()) newErrors.phone = "Укажите номер телефона";
+    if (!formData.message.trim()) newErrors.message = "Опишите ваш проект";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const isFormValid = Object.values(formData).every(
+    (value) => value.trim() !== ""
+  );
+
+  const handleFieldChange = (name: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setSending(true);
 
     const formData = new FormData(e.currentTarget);
@@ -48,28 +86,56 @@ export const Form = () => {
         </h2>
 
         <div className="mt-10 space-y-8">
-          <FloatingField label="как вас зовут?" type="text" name="name" />
+          <FloatingField
+            label="как вас зовут?"
+            type="text"
+            name="name"
+            error={errors.name}
+            onValueChange={handleFieldChange}
+          />
           <FloatingField
             label="от лица какой компании вы пишете?"
             type="text"
             name="company"
+            error={errors.company}
+            onValueChange={handleFieldChange}
           />
-          <FloatingField label="email" type="email" name="email" mask="email" />
+          <FloatingField
+            label="email"
+            type="email"
+            name="email"
+            mask="email"
+            error={errors.email}
+            onValueChange={handleFieldChange}
+          />
           <FloatingField
             label="номер телефона"
             type="tel"
             name="phone"
             mask="phone"
+            error={errors.phone}
+            onValueChange={handleFieldChange}
           />
-          <FloatingTextArea label="опишите идею или проект" name="message" />
+          <FloatingTextArea
+            label="опишите идею или проект"
+            name="message"
+            error={errors.message}
+            onValueChange={handleFieldChange}
+          />
         </div>
 
         <button
           type="submit"
-          disabled={sending || sent}
-          className={`mt-12 w-full h-16 text-white text-base font-['Cygre_Book'] leading-none transition-colors ${
-            sent ? "bg-green-600" : sending ? "bg-neutral-600" : "bg-black"
-          }`}
+          disabled={sending || sent || !isFormValid}
+          className={`mt-12 w-full h-16 text-white text-base font-['Cygre_Book'] leading-none transition-all duration-300 
+            ${
+              sent
+                ? "bg-green-600 hover:bg-green-700"
+                : sending
+                ? "bg-neutral-600"
+                : "bg-black hover:bg-neutral-800"
+            } 
+            transform hover:scale-[0.99] active:scale-95 cursor-pointer disabled:cursor-not-allowed`}
         >
           {sent ? "отправлено" : sending ? "отправка..." : "отправить"}
         </button>
@@ -83,6 +149,8 @@ type FloatingFieldProps = {
   name: string;
   type?: string;
   mask?: "phone" | "email";
+  error?: string;
+  onValueChange?: (name: string, value: string) => void;
 };
 
 const FloatingField = ({
@@ -90,6 +158,8 @@ const FloatingField = ({
   name,
   type = "text",
   mask,
+  error,
+  onValueChange,
 }: FloatingFieldProps) => {
   const [value, setValue] = useState("");
   const [focused, setFocused] = useState(false);
@@ -118,23 +188,33 @@ const FloatingField = ({
         value={value}
         onChange={(e) => {
           const raw = e.target.value;
+          let processedValue;
           if (mask === "phone") {
-            setValue(formatPhone(raw));
+            processedValue = formatPhone(raw);
           } else if (mask === "email") {
-            setValue(sanitizeEmail(raw));
+            processedValue = sanitizeEmail(raw);
           } else {
-            setValue(raw);
+            processedValue = raw;
           }
+          setValue(processedValue);
+          onValueChange?.(name, processedValue);
         }}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="block w-full border-b border-black bg-transparent outline-none pt-6 pb-2 text-black placeholder:transparent"
+        className={`block w-full border-b ${
+          error ? "border-red-500" : "border-black"
+        } bg-transparent outline-none pt-6 pb-2 text-black placeholder:transparent`}
         placeholder=" "
         autoComplete="off"
         inputMode={
           mask === "phone" ? "tel" : mask === "email" ? "email" : undefined
         }
       />
+      {error && (
+        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-['Cygre_Book']">
+          {error}
+        </div>
+      )}
     </div>
   );
 };
@@ -142,9 +222,16 @@ const FloatingField = ({
 type FloatingTextAreaProps = {
   label: string;
   name: string;
+  error?: string;
+  onValueChange?: (name: string, value: string) => void;
 };
 
-const FloatingTextArea = ({ label, name }: FloatingTextAreaProps) => {
+const FloatingTextArea = ({
+  label,
+  name,
+  error,
+  onValueChange,
+}: FloatingTextAreaProps) => {
   const [value, setValue] = useState("");
   const [focused, setFocused] = useState(false);
   const id = useId();
@@ -169,12 +256,23 @@ const FloatingTextArea = ({ label, name }: FloatingTextAreaProps) => {
         id={`${name}-${id}`}
         name={name}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          const value = e.target.value;
+          setValue(value);
+          onValueChange?.(name, value);
+        }}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="block w-full border-b border-black bg-transparent outline-none pt-6 pb-2 min-h-[120px] resize-y text-black placeholder:transparent"
+        className={`block w-full border-b ${
+          error ? "border-red-500" : "border-black"
+        } bg-transparent outline-none pt-6 pb-2 min-h-[120px] resize-y text-black placeholder:transparent`}
         placeholder=" "
       />
+      {error && (
+        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-['Cygre_Book']">
+          {error}
+        </div>
+      )}
     </div>
   );
 };

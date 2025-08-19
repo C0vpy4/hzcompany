@@ -20,13 +20,16 @@ export const Hero = () => {
             className="object-contain "
           />
         </motion.div>
-        <div className="absolute z-50 inline-flex flex-col sm:flex-row justify-center items-center gap-5 -bottom-20 sm:bottom-50 w-full">
+        <div className="absolute z-50 inline-flex flex-col sm:flex-row justify-center items-center gap-5 -bottom-20 sm:bottom-50 w-full group">
           <a href="#form" className="w-full">
             <motion.button
               type="button"
-              className="cursor-pointer group w-full h-16 border border-black transition-colors duration-300 hover:bg-black"
+              className="cursor-pointer w-full h-16 border border-black bg-transparent transition-all duration-300 
+                hover:bg-black hover:text-white 
+                group-hover:bg-black group-hover:text-white"
               aria-label="присоединиться"
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 0.97 }}
+              whileTap={{ scale: 0.9 }}
               transition={{
                 type: "spring",
                 stiffness: 500,
@@ -34,17 +37,23 @@ export const Hero = () => {
                 mass: 0.5,
               }}
             >
-              <div className="justify-start text-black text-base font-['Cygre_Book'] leading-none transition-colors duration-300 group-hover:text-white">
+              <span
+                className="text-black text-base font-['Cygre_Book'] leading-none transition-colors duration-300 
+                group-hover:text-white hover:text-white"
+              >
                 присоединиться
-              </div>
+              </span>
             </motion.button>
           </a>
           <a href="#fact" className="w-full">
             <motion.button
               type="button"
-              className="group cursor-pointer w-full h-16 border border-black bg-black transition-colors duration-300 hover:bg-transparent"
+              className="cursor-pointer w-full h-16 border border-black bg-black transition-all duration-300 
+                hover:bg-transparent hover:text-black
+                group-hover:bg-transparent group-hover:text-black"
               aria-label="узнать больше"
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 0.97 }}
+              whileTap={{ scale: 0.9 }}
               transition={{
                 type: "spring",
                 stiffness: 500,
@@ -52,9 +61,12 @@ export const Hero = () => {
                 mass: 0.5,
               }}
             >
-              <div className="justify-start text-white text-base font-['Cygre_Book'] leading-none transition-colors duration-300 group-hover:text-black">
+              <span
+                className="text-white text-base font-['Cygre_Book'] leading-none transition-colors duration-300 
+                group-hover:text-black hover:text-black"
+              >
                 узнать больше
-              </div>
+              </span>
             </motion.button>
           </a>
         </div>

@@ -85,7 +85,7 @@ export const Header = () => {
         </motion.button>
 
         <a
-          className="hidden sm:block cursor-pointer justify-start text-black text-base font-normal font-['Cygre'] underline leading-none"
+          className="hidden sm:block cursor-pointer justify-start text-black font-cygre text-base font-normal font-['Cygre'] underline leading-none"
           href="mailto:hzcompany@gmail.com"
         >
           hzcompanyteam@gmail.com
