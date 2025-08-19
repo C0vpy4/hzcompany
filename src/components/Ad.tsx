@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const Ad = () => {
   return (
@@ -13,11 +14,16 @@ export const Ad = () => {
           </div>
         </div>
 
-        <img
-          className=" inset-0 w-full h-full object-cover"
-          src="https://placehold.co/1820x893"
-          alt="Ad background"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="https://placehold.co/1820x893"
+            alt="Ad background"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority={false}
+          />
+        </div>
       </div>
     </div>
   );

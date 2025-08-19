@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -33,8 +34,7 @@ export const Header = () => {
   return (
     <div className="fixed inset-x-0 top-0 z-[100] py-4 bg-white/40 backdrop-blur-sm">
       <div className="relative mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 flex justify-between py-3">
-        {/* Теперь нормально: используем next/link и импортируем Link */}
-        <a
+        <Link
           href="/"
           className="w-20 h-10 relative block cursor-pointer"
           aria-label="На главную"
@@ -43,7 +43,7 @@ export const Header = () => {
           <div className="w-10 h-5 left-[21.54px] top-[40px] absolute origin-top-left -rotate-90 bg-black border border-black" />
           <div className="w-10 h-5 left-0 top-[40px] absolute origin-top-left -rotate-90 bg-black border border-black" />
           <div className="w-11 h-5 left-[43.08px] top-[21.54px] absolute bg-black border border-black" />
-        </a>
+        </Link>
 
         <button
           aria-expanded={open}
