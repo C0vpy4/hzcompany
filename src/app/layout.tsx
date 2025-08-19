@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className="">
-      <body className="min-h-screen h-full font-cygre font-['Cygre'] antialiased sm:px-20 px-2 py-10  ">
+      <body className="min-h-screen h-full font-cygre  font-['Cygre'] antialiased sm:px-20 px-2 py-10  ">
         <Header />
         {children}
       </body>
