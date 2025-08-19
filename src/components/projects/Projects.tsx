@@ -4,7 +4,7 @@ import { Project } from "./ui/Project";
 
 export const Projects = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-80">
       <Project title="HZbank" year="2021" imageSrc="/projects/hzbank.png" />
       <Project title="Project 2" year="2022" imageSrc="/projects/2.png" />
       <Project title="Project 3" year="2023" imageSrc="/projects/3.png" />

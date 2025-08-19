@@ -159,3 +159,19 @@ body {
 .font-cygre {
   font-family: "Cygre", sans-serif;
 }
+
+/* Alias to match usage font-['Cygre_Book'] in components */
+@font-face {
+  font-family: "Cygre_Book";
+  src: url("/fonts/Cygre-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cygre_Book";
+  src: url("/fonts/Cygre-BookIt.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
