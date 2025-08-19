@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const Txt = () => {
   return (
     <div>
-      <div className=" min-h-screen flex items-center justify-center flex-col gap-5">
+      <div className="font-['Cygre'] min-h-screen flex items-center justify-center flex-col gap-5">
         <motion.div
           className=" text-center justify-start text-black text-[clamp(1.75rem,6vw,6rem)] font-['Cygre_Book'] sm:leading-[106.97px]"
           initial={{ opacity: 0, y: 24 }}

@@ -16,7 +16,7 @@ export const Fact = () => {
     <div>
       <div
         ref={sectionRef}
-        className="relative  flex flex-col items-start justify-start px-4 sm:px-20 "
+        className="font-['Cygre'] relative  flex flex-col items-start justify-start px-4 sm:px-20 "
       >
         <div className="w-full text-center text-black text-[clamp(1rem,5vw,6rem)] font-['Cygre_Book'] leading-tight  break-words">
           <span>каждый продукт - вера </span>
