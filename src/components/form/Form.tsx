@@ -2,10 +2,47 @@
 import React, { useState, useId } from "react";
 import { motion } from "framer-motion";
 
+import { sendEmail } from "@/app/actions";
+
 export const Form = () => {
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      company: formData.get("company") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const result = await sendEmail(data);
+      if (result.success) {
+        setSent(true);
+        const form = e.currentTarget;
+        if (form instanceof HTMLFormElement) {
+          form.reset();
+        }
+      }
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+    } finally {
+      setSending(false);
+    }
+  }
+
   return (
     <div className="w-full font-['Cygre']">
-      <form className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10">
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10"
+      >
         <h2 className="text-center text-black font-['Cygre_Book'] leading-tight text-[clamp(1.75rem,6vw,6rem)]">
           хотите обсудить проект?
         </h2>
@@ -29,9 +66,12 @@ export const Form = () => {
 
         <button
           type="submit"
-          className="mt-12 w-full h-16 bg-black text-white text-base font-['Cygre_Book'] leading-none"
+          disabled={sending || sent}
+          className={`mt-12 w-full h-16 text-white text-base font-['Cygre_Book'] leading-none transition-colors ${
+            sent ? "bg-green-600" : sending ? "bg-neutral-600" : "bg-black"
+          }`}
         >
-          отправить
+          {sent ? "отправлено" : sending ? "отправка..." : "отправить"}
         </button>
       </form>
     </div>
