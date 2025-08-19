@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         sans: ["Geist Sans", "sans-serif"], // Прямое указание имени
         mono: ["Geist Mono", "monospace"],
+        cygre: ["Cygre_Book", "sans-serif"], // Добавлен шрифт Cygre
       },
     },
   },

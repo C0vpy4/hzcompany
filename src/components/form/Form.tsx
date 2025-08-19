@@ -6,7 +6,7 @@ export const Form = () => {
   return (
     <div className="w-full">
       <form className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10">
-        <h2 className="text-black font-['Cygre_Book'] leading-tight text-[clamp(1.75rem,6vw,6rem)]">
+        <h2 className="text-center text-black font-['Cygre_Book'] leading-tight text-[clamp(1.75rem,6vw,6rem)]">
           хотите обсудить проект?
         </h2>
 
