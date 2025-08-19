@@ -5,9 +5,13 @@ import { Project } from "./ui/Project";
 export const Projects = () => {
   return (
     <div className="font-['Cygre'] grid grid-cols-1 sm:grid-cols-2 gap-10">
-      <Project title="HZbank" year="2021" imageSrc="/projects/hzbank.png" />
-      <Project title="Project 2" year="2022" imageSrc="/projects/2.png" />
-      <Project title="Project 3" year="2023" imageSrc="/projects/3.png" />
+      <Project title="HZbank" year="soon" imageSrc="/projects/hzbank.png" />
+      <Project
+        title="HZlogistic"
+        year="soon"
+        imageSrc="/projects/hzlogistiks.png"
+      />
+      <Project title="HZhouse" year="soon" imageSrc="/projects/3.png" />
       <div className="w-full">
         <div className="relative w-full mx-auto">
           <div className="flex items-start justify-between px-2 sm:px-0">

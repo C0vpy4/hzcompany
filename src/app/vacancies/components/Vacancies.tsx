@@ -22,18 +22,9 @@ export const Vacancies = ({
   });
   const rotateXRaw = useTransform(scrollYProgress, [0, 0.5, 1], [12, 0, -12]);
   const yRaw = useTransform(scrollYProgress, [0, 1], [24, -24]);
-  const shadowRaw = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.15, 0.08, 0.15]
-  );
+
   const rotateX = useSpring(rotateXRaw, { stiffness: 120, damping: 20 });
   const y = useSpring(yRaw, { stiffness: 120, damping: 20 });
-  const shadow = useSpring(shadowRaw, { stiffness: 120, damping: 20 });
-  const boxShadow = useTransform(
-    shadow,
-    (s: number) => `0 20px 60px rgba(0,0,0,${s})`
-  );
 
   const stickyClass = useMemo(
     () => (pin === "bottom" ? "sticky bottom-0" : "sticky top-0"),
@@ -48,7 +39,6 @@ export const Vacancies = ({
           rotateX,
           y,
           transformStyle: "preserve-3d",
-          boxShadow: boxShadow,
         }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

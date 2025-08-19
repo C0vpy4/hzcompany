@@ -19,7 +19,7 @@ export const Form = () => {
           />
           <FloatingField label="email" type="email" name="email" mask="email" />
           <FloatingField
-            label="+7 (000) 000 - 0000"
+            label="номер телефона"
             type="tel"
             name="phone"
             mask="phone"

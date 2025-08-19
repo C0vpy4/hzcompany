@@ -104,7 +104,7 @@ export const Footer = () => {
         <div>все права защищены</div>
       </div>
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="w-full overflow-hidden whitespace-nowrap text-black font-['Cygre_Book'] leading-none text-[clamp(3rem,16vw,32rem)]">
+        <div className="w-full text-center overflow-hidden whitespace-nowrap text-black font-['Cygre_Book'] leading-none text-[clamp(3rem,15vw,32rem)]">
           hzcompany
         </div>
       </div>

@@ -18,18 +18,18 @@ export const Fact = () => {
         ref={sectionRef}
         className="font-['Cygre'] relative  flex flex-col items-start justify-start px-4 sm:px-20 "
       >
-        <div className="w-full text-center text-black text-[clamp(1rem,5vw,6rem)] font-['Cygre_Book'] leading-tight  break-words">
+        <div className="w-full text-center text-black text-[clamp(2rem,7vw,8rem)] font-['Cygre_Book'] leading-tight break-words">
           <span>каждый продукт - вера </span>
           <span className="text-neutral-500">в нас,</span>
         </div>
-        <div className="w-full  text-end text-black text-[clamp(1rem,5vw,6rem)] font-['Cygre_Book'] leading-tight  break-words">
+        <div className="w-full text-end text-black text-[clamp(2rem,7vw,8rem)] font-['Cygre_Book'] leading-tight break-words">
           в каждого человека по отдельности,
         </div>
-        <div className="w-full text-right text-neutral-500 text-[clamp(1rem,5vw,6rem)] font-['Cygre_Book'] leading-tight break-words">
+        <div className="w-full text-right text-neutral-500 text-[clamp(2rem,7vw,8rem)] font-['Cygre_Book'] leading-tight break-words">
           технологии и качество
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 transform -top-[30px] sm:top-[140px] w-[90vw] sm:w-[75vw] lg:w-[60vw] max-w-[1500px] aspect-[4/4] pointer-events-none">
+        <div className="absolute left-1/2 -translate-x-1/2 transform -top-[30px] sm:top-[90px] w-[90vw] sm:w-[75vw] lg:w-[60vw] max-w-[1500px] aspect-[4/7] pointer-events-none">
           <motion.div
             style={{ y, scale }}
             className="relative w-full h-full will-change-transform"
