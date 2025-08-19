@@ -1,0 +1,113 @@
+import React from "react";
+
+export const Footer = () => {
+  return (
+    <footer className="w-full bg-white flex flex-col items-center justify-center">
+      <div className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="flex justify-between flex-col sm:flex-row">
+          <div className="space-y-3">
+            <div className="text-black text-base font-['Cygre_Book'] lowercase">
+              hzcompanyteam@gmail.com
+            </div>
+            <div className="text-black text-base font-['Cygre_Book'] lowercase">
+              +79685462359
+            </div>
+            <a
+              href="#"
+              className="block text-black text-base font-['Cygre_Book'] lowercase"
+            >
+              о нас
+            </a>
+            <a
+              href="#"
+              className="block text-black text-base font-['Cygre_Book'] lowercase"
+            >
+              продукты
+            </a>
+            <a
+              href="#"
+              className="block text-black text-base font-['Cygre_Book'] lowercase"
+            >
+              вакансии
+            </a>
+            <a
+              href="#"
+              className="block text-black text-base font-['Cygre_Book'] lowercase"
+            >
+              заказать проект
+            </a>
+          </div>
+
+          <div className="lg:col-span-7 ml-auto">
+            <div className="mt-4 grid grid-cols-5 sm:grid-cols-2 gap-4 justify-items-end">
+              <a
+                href="#"
+                aria-label="VK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                vk
+              </a>
+              <a
+                href="#"
+                aria-label="Telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                tg
+              </a>
+              <a
+                href="#"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                yt
+              </a>
+              <a
+                href="#"
+                aria-label="X"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                x
+              </a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                ig
+              </a>
+              <a
+                href="#"
+                aria-label="TikTok"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-16 h-16 sm:w-20 sm:h-20 border border-black flex items-center justify-center text-black font-['Cygre_Book'] lowercase hover:bg-black hover:text-white transition-colors"
+              >
+                tt
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-4 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-black text-base font-['Cygre_Book'] px-4 sm:px-6 lg:px-8">
+        <div>designed by Ivan Peter</div>
+        <div>@ hzcompany 2025</div>
+        <div>все права защищены</div>
+      </div>
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="w-full overflow-hidden whitespace-nowrap text-black font-['Cygre_Book'] leading-none text-[clamp(3rem,16vw,32rem)]">
+          hzcompany
+        </div>
+      </div>
+    </footer>
+  );
+};

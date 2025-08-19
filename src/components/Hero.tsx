@@ -7,8 +7,8 @@ export const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   return (
-    <div className="flex justify-center items-center flex-col p-20 w-300  max-h-full max-w-full">
-      <div className="justify-center text-black sm:text-8xl text-4xl font-['Cygre_Book'] leading-[94.74px]">
+    <div className="flex justify-center items-center flex-col p-20 w-300  min-h-screen  max-h-full max-w-full">
+      <div className="justify-center absolute top-25 sm:top-15 text-black sm:text-8xl text-4xl font-['Cygre_Book'] leading-[94.74px]">
         hzcompany
       </div>
       <div className="absolute top-25 lg:top-15 md:top-25 sm:top-10 flex  w-86 h-86  sm:w-full sm:h-full max-w-full ">
