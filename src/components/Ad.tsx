@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Ad = () => {
   return (
     <div>
-      <div className="relative w-full h-[60vh] sm:h-[70vh] max-w-[1821px] mx-auto mt-150">
+      <div className="relative w-full h-[60vh] sm:h-[70vh] max-w-[1821px] mx-auto mt-100 sm:mt-150">
         <div className="w-full flex justify-between">
           <div className="  text-black text-[clamp(0.875rem,2.5vw,1rem)] font-['Cygre_Book'] leading-none">
             hzlab
@@ -14,14 +14,17 @@ export const Ad = () => {
           </div>
         </div>
 
-        <div className="">
-          <Image
-            src="/projects/hzbank.png"
-            alt="Ad background"
-            fill
-            className=""
-            priority={false}
-          />
+        <div className="relative">
+          <div className="relative w-full h-[40vh] sm:h-[60vh]">
+            <Image
+              src="/projects/hzbank.png"
+              alt="Ad background"
+              layout="fill"
+              objectFit="contain"
+              className="object-contain"
+              priority={false}
+            />
+          </div>
         </div>
       </div>
     </div>
