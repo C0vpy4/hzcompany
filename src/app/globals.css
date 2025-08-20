@@ -11,10 +11,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-BoldIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-BoldIt.woff") format("woff"),
-    url("/fonts/Cygre-BoldIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-BoldIt.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -22,10 +19,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Bold.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Bold.woff") format("woff"),
-    url("/fonts/Cygre-Bold.ttf") format("truetype");
+  src: url("/fonts/Cygre-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -33,10 +27,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-BlackIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-BlackIt.woff") format("woff"),
-    url("/fonts/Cygre-BlackIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-BlackIt.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -44,10 +35,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Black.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Black.woff") format("woff"),
-    url("/fonts/Cygre-Black.ttf") format("truetype");
+  src: url("/fonts/Cygre-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -55,10 +43,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-ThinIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-ThinIt.woff") format("woff"),
-    url("/fonts/Cygre-ThinIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-ThinIt.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -66,10 +51,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Thin.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Thin.woff") format("woff"),
-    url("/fonts/Cygre-Thin.ttf") format("truetype");
+  src: url("/fonts/Cygre-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -77,10 +59,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-SemiBoldIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-SemiBoldIt.woff") format("woff"),
-    url("/fonts/Cygre-SemiBoldIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-SemiBoldIt.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -88,10 +67,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-SemiBold.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-SemiBold.woff") format("woff"),
-    url("/fonts/Cygre-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Cygre-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -99,10 +75,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-RegularIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-RegularIt.woff") format("woff"),
-    url("/fonts/Cygre-RegularIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-RegularIt.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -110,10 +83,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Regular.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Regular.woff") format("woff"),
-    url("/fonts/Cygre-Regular.ttf") format("truetype");
+  src: url("/fonts/Cygre-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -121,10 +91,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-MediumIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-MediumIt.woff") format("woff"),
-    url("/fonts/Cygre-MediumIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-MediumIt.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -132,10 +99,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Medium.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Medium.woff") format("woff"),
-    url("/fonts/Cygre-Medium.ttf") format("truetype");
+  src: url("/fonts/Cygre-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -143,10 +107,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-LightIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-LightIt.woff") format("woff"),
-    url("/fonts/Cygre-LightIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-LightIt.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -154,10 +115,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Light.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Light.woff") format("woff"),
-    url("/fonts/Cygre-Light.ttf") format("truetype");
+  src: url("/fonts/Cygre-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -165,10 +123,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-ExtraBoldIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-ExtraBoldIt.woff") format("woff"),
-    url("/fonts/Cygre-ExtraBoldIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-ExtraBoldIt.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -176,10 +131,7 @@
 
 @font-face {
   font-family: "Cygre";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-ExtraBold.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-ExtraBold.woff") format("woff"),
-    url("/fonts/Cygre-ExtraBold.ttf") format("truetype");
+  src: url("/fonts/Cygre-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -188,33 +140,29 @@
 @font-face {
   font-family: "Cygre";
   src: url("/fonts/Cygre-BookIt.ttf") format("truetype");
-  font-weight: 350;
+  font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Cygre";
   src: url("/fonts/Cygre-Book.ttf") format("truetype");
-  font-weight: 350;
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 /* Alias to match usage font-['Cygre_Book'] in components */
 @font-face {
   font-family: "Cygre_Book";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-Book.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-Book.woff") format("woff"),
-    url("/fonts/Cygre-Book.ttf") format("truetype");
+  src: url("/fonts/Cygre-Book.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Cygre_Book";
-  src:
-    url("https://cdn.yourcdn.com/fonts/Cygre-BookIt.woff2") format("woff2"),
-    url("https://cdn.yourcdn.com/fonts/Cygre-BookIt.woff") format("woff"),
-    url("/fonts/Cygre-BookIt.ttf") format("truetype");
+  src: url("/fonts/Cygre-BookIt.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
