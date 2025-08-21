@@ -4,7 +4,7 @@ import { Project } from "./ui/Project";
 
 export const Projects = () => {
   return (
-    <div className="font-['Cygre'] grid grid-cols-1 sm:grid-cols-2 gap-10">
+    <div className="font-cygre grid grid-cols-1 sm:grid-cols-2 gap-10">
       <Project title="HZbank" year="soon" imageSrc="/projects/hzbank.png" />
       <Project
         title="HZlogistic"
@@ -15,10 +15,10 @@ export const Projects = () => {
       <div className="w-full">
         <div className="relative w-full mx-auto">
           <div className="flex items-start justify-between px-2 sm:px-0">
-            <div className="text-black text-sm sm:text-base font-['Cygre_Book'] leading-none">
+            <div className="text-black text-sm sm:text-base font-cygre leading-none">
               все продукты
             </div>
-            <div className="text-black text-sm sm:text-base font-['Cygre_Book'] leading-none">
+            <div className="text-black text-sm sm:text-base font-cygre leading-none">
               2025-2028
             </div>
           </div>

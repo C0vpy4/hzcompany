@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/shared";
+import { cygre } from "./fonts";
+import { GeistSans, GeistMono } from "geist/font";
 
 export const viewport = {
   width: "device-width",
@@ -18,8 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className="">
-      <body className="min-h-screen h-full font-cygre  font-['Cygre'] antialiased sm:px-20 px-2 py-10  ">
+    <html
+      lang="ru"
+      className={`${GeistSans.variable} ${GeistMono.variable} ${cygre.variable}`}
+    >
+      <body className="min-h-screen h-full font-cygre antialiased sm:px-20 px-2 py-10">
         <Header />
         {children}
       </body>

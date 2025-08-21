@@ -7,8 +7,8 @@ export const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   return (
-    <div className="font-['Cygre'] flex justify-center items-center flex-col p-20 w-300  min-h-screen  max-h-full max-w-full">
-      <div className="justify-center absolute top-25 sm:top-15 text-black sm:text-8xl text-4xl font-['Cygre_Book'] leading-[94.74px]">
+    <div className="font-cygre flex justify-center items-center flex-col p-20 w-300  min-h-screen  max-h-full max-w-full">
+      <div className="justify-center absolute top-25 sm:top-15 text-black sm:text-8xl text-4xl font-cygre leading-[94.74px]">
         hzcompany
       </div>
       <div className="absolute top-25 lg:top-15 md:top-25 sm:top-10 flex  w-86 h-86  sm:w-full sm:h-full max-w-full ">
@@ -38,7 +38,7 @@ export const Hero = () => {
               }}
             >
               <span
-                className="text-black text-base font-['Cygre_Book'] leading-none transition-colors duration-300 
+                className="text-black text-base font-cygre leading-none transition-colors duration-300 
                 group-hover:text-white hover:text-white"
               >
                 присоединиться
@@ -62,7 +62,7 @@ export const Hero = () => {
               }}
             >
               <span
-                className="text-white text-base font-['Cygre_Book'] leading-none transition-colors duration-300 
+                className="text-white text-base font-cygre leading-none transition-colors duration-300 
                 group-hover:text-black hover:text-black"
               >
                 узнать больше

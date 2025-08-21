@@ -85,7 +85,7 @@ export const Header = () => {
         </motion.button>
 
         <a
-          className="hidden sm:block cursor-pointer justify-start text-black font-cygre text-base font-normal font-['Cygre'] underline leading-none"
+          className="hidden sm:block cursor-pointer justify-start text-black font-cygre text-base font-normal underline leading-none"
           href="mailto:hzcompany@gmail.com"
         >
           hzcompanyteam@gmail.com
@@ -106,19 +106,19 @@ export const Header = () => {
                 <div className="flex flex-col items-center sm:items-start space-y-4">
                   <a
                     href="#"
-                    className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                    className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
                     о нас
                   </a>
                   <a
                     href="/products"
-                    className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                    className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
                     продукты
                   </a>
                   <a
                     href="/vacancies"
-                    className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                    className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
                     вакансии
                   </a>
@@ -127,45 +127,45 @@ export const Header = () => {
                 <div className="flex flex-col items-center justify-center space-y-4">
                   <a
                     href="mailto:hzcompanyteam@gmail.com"
-                    className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                    className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
                     hzcompanyteam@gmail.com
                   </a>
                   <a
                     href="tel:+79252283698"
-                    className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                    className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
                     +7 (925) 228 36 98
                   </a>
                   <div className="flex items-center justify-center  flex-col space-y-4">
                     <a
                       href="https://t.me/hzcompanypr"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                      className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       telegram
                     </a>
 
                     <a
                       href="https://www.instagram.com/hzpank/"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                      className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       instagram
                     </a>
                     <a
                       href="https://x.com/hzpank"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                      className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       x
                     </a>
                     <a
                       href="https://www.youtube.com/@hzpank"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                      className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       youtube
                     </a>
                     <a
                       href="#"
-                      className="text-black text-base font-['Cygre_Book'] leading-none hover:opacity-70 transition-opacity"
+                      className="text-black text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       tik tok
                     </a>
@@ -173,13 +173,13 @@ export const Header = () => {
                 </div>
 
                 <div className="flex flex-col items-center justify-center  sm:justify-start   space-y-4 sm:items-end">
-                  <div className="text-black text-base font-['Cygre_Book'] leading-none">
+                  <div className="text-black text-base font-cygre leading-none">
                     @ hzcompany 2025
                   </div>
-                  <div className="text-black text-base font-['Cygre_Book'] leading-none">
+                  <div className="text-black text-base font-cygre leading-none">
                     designed by Ivan Peter
                   </div>
-                  <div className="text-black text-base font-['Cygre_Book'] leading-none">
+                  <div className="text-black text-base font-cygre leading-none">
                     все права защищены
                   </div>
                 </div>

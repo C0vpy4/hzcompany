@@ -76,12 +76,12 @@ export const Form = () => {
   }
 
   return (
-    <div className="w-full font-['Cygre']" id="form">
+    <div className="w-full font-cygre" id="form">
       <form
         onSubmit={handleSubmit}
         className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10"
       >
-        <h2 className="text-center text-black font-['Cygre_Book'] leading-tight text-[clamp(1.75rem,6vw,6rem)]">
+        <h2 className="text-center text-black font-cygre leading-tight text-[clamp(1.75rem,6vw,6rem)]">
           хотите обсудить проект?
         </h2>
 
@@ -127,7 +127,7 @@ export const Form = () => {
         <button
           type="submit"
           disabled={sending || sent || !isFormValid}
-          className={`mt-12 w-full h-16 text-white text-base font-['Cygre_Book'] leading-none transition-all duration-300 
+          className={`mt-12 w-full h-16 text-white text-base font-cygre leading-none transition-all duration-300 
             ${
               sent
                 ? "bg-green-600 hover:bg-green-700"
@@ -170,7 +170,7 @@ const FloatingField = ({
     <div className="relative">
       <motion.label
         htmlFor={`${name}-${id}`}
-        className="absolute left-0 font-['Cygre_Book'] text-black origin-left"
+        className="absolute left-0 font-cygre text-black origin-left"
         initial={false}
         animate={{
           y: isActive ? -22 : 10,
@@ -211,7 +211,7 @@ const FloatingField = ({
         }
       />
       {error && (
-        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-['Cygre_Book']">
+        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-cygre">
           {error}
         </div>
       )}
@@ -241,7 +241,7 @@ const FloatingTextArea = ({
     <div className="relative">
       <motion.label
         htmlFor={`${name}-${id}`}
-        className="absolute left-0 font-['Cygre_Book'] text-black origin-left"
+        className="absolute left-0 font-cygre text-black origin-left"
         initial={false}
         animate={{
           y: isActive ? -22 : 10,
@@ -269,7 +269,7 @@ const FloatingTextArea = ({
         placeholder=" "
       />
       {error && (
-        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-['Cygre_Book']">
+        <div className="absolute left-0 top-full mt-1 text-red-500 text-sm font-cygre">
           {error}
         </div>
       )}

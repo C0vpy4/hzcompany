@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 export const Txt = () => {
   return (
     <div>
-      <div className="font-['Cygre'] min-h-screen flex items-center justify-center flex-col gap-5">
+      <div className="font-cygre min-h-screen flex items-center justify-center flex-col gap-5">
         <motion.div
-          className=" text-center justify-start text-black text-[clamp(1.75rem,6vw,6rem)] font-['Cygre_Book'] sm:leading-[106.97px]"
+          className=" text-center justify-start text-black text-[clamp(1.75rem,6vw,6rem)] font-cygre sm:leading-[106.97px]"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -16,7 +16,7 @@ export const Txt = () => {
           hzcompany — это технологическая организация нового типа
         </motion.div>
         <motion.div
-          className=" text-center justify-start text-black text-[clamp(0.95rem,2.6vw,1rem)] font-['Cygre_Book'] leading-none"
+          className=" text-center justify-start text-black text-[clamp(0.95rem,2.6vw,1rem)] font-cygre leading-none"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -26,7 +26,7 @@ export const Txt = () => {
           взаимодействия между людьми, задачами и знаниями
         </motion.div>
         <motion.div
-          className="text-center justify-start text-black text-[clamp(0.95rem,2.6vw,1rem)] font-['Cygre_Book']"
+          className="text-center justify-start text-black text-[clamp(0.95rem,2.6vw,1rem)] font-cygre"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

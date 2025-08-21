@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Geist Sans", "sans-serif"], // Прямое указание имени
-        mono: ["Geist Mono", "monospace"],
-        cygre: ["Cygre_Book", "sans-serif"], // Добавлен шрифт Cygre
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+        cygre: ["var(--font-cygre)", "system-ui", "sans-serif"],
       },
     },
   },
