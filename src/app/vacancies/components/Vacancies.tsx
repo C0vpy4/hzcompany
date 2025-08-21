@@ -47,20 +47,20 @@ export const Vacancies = ({
         className={`relative w-full bg-white border border-black px-4 sm:px-6 lg:px-8 py-6 will-change-transform ${stickyClass}`}
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <h3 className="text-black font-cygre leading-tight text-[clamp(2rem,6vw,6rem)]">
+          <h3 className="text-black dark:text-white font-cygre leading-tight text-[clamp(2rem,6vw,6rem)]">
             {text}
           </h3>
           <div className="flex flex-col items-center justify-center gap-3">
             {right ? (
-              <span className="text-black text-sm sm:text-base font-cygre leading-none">
+              <span className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
                 {right}
               </span>
             ) : (
               <>
-                <span className="text-black text-sm sm:text-base font-cygre leading-none">
+                <span className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
                   проектная работа
                 </span>
-                <span className="text-black text-sm sm:text-base font-cygre leading-none">
+                <span className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
                   удалёнка
                 </span>
               </>

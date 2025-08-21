@@ -13,10 +13,10 @@ export const Project = ({ title, year, imageSrc, imageAlt }: ProjectProps) => {
     <div className="w-full">
       <div className="relative w-full  mx-auto">
         <div className="flex items-start justify-between px-2 sm:px-0">
-          <div className="text-black text-sm sm:text-base font-cygre leading-none">
+          <div className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
             {title}
           </div>
-          <div className="text-black text-sm sm:text-base font-cygre leading-none">
+          <div className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
             {year}
           </div>
         </div>

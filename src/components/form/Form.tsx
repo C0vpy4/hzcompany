@@ -81,7 +81,7 @@ export const Form = () => {
         onSubmit={handleSubmit}
         className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-10"
       >
-        <h2 className="text-center text-black font-cygre leading-tight text-[clamp(1.75rem,6vw,6rem)]">
+        <h2 className="text-center text-black dark:text-white font-cygre leading-tight text-[clamp(1.75rem,6vw,6rem)]">
           хотите обсудить проект?
         </h2>
 
@@ -127,13 +127,13 @@ export const Form = () => {
         <button
           type="submit"
           disabled={sending || sent || !isFormValid}
-          className={`mt-12 w-full h-16 text-white text-base font-cygre leading-none transition-all duration-300 
+          className={`mt-12 w-full h-16 text-white dark:text-black text-base font-cygre leading-none transition-all duration-300 
             ${
               sent
                 ? "bg-green-600 hover:bg-green-700"
                 : sending
                 ? "bg-neutral-600"
-                : "bg-black hover:bg-neutral-800"
+                : "bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200"
             } 
             transform hover:scale-[0.99] active:scale-95 cursor-pointer disabled:cursor-not-allowed`}
         >
@@ -170,12 +170,12 @@ const FloatingField = ({
     <div className="relative">
       <motion.label
         htmlFor={`${name}-${id}`}
-        className="absolute left-0 font-cygre text-black origin-left"
+        className="absolute left-0 font-cygre text-black dark:text-white origin-left"
         initial={false}
         animate={{
           y: isActive ? -22 : 10,
           scale: isActive ? 0.85 : 1,
-          color: "#000000",
+          color: "currentColor",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
@@ -202,8 +202,8 @@ const FloatingField = ({
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         className={`block w-full border-b ${
-          error ? "border-red-500" : "border-black"
-        } bg-transparent outline-none pt-6 pb-2 text-black placeholder:transparent`}
+          error ? "border-red-500" : "border-black dark:border-white"
+        } bg-transparent outline-none pt-6 pb-2 text-black dark:text-white placeholder:transparent`}
         placeholder=" "
         autoComplete="off"
         inputMode={
@@ -241,12 +241,12 @@ const FloatingTextArea = ({
     <div className="relative">
       <motion.label
         htmlFor={`${name}-${id}`}
-        className="absolute left-0 font-cygre text-black origin-left"
+        className="absolute left-0 font-cygre text-black dark:text-white origin-left"
         initial={false}
         animate={{
           y: isActive ? -22 : 10,
           scale: isActive ? 0.85 : 1,
-          color: "#000000",
+          color: "currentColor",
         }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
@@ -264,8 +264,8 @@ const FloatingTextArea = ({
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         className={`block w-full border-b ${
-          error ? "border-red-500" : "border-black"
-        } bg-transparent outline-none pt-6 pb-2 min-h-[120px] resize-y text-black placeholder:transparent`}
+          error ? "border-red-500" : "border-black dark:border-white"
+        } bg-transparent outline-none pt-6 pb-2 min-h-[120px] resize-y text-black dark:text-white placeholder:transparent`}
         placeholder=" "
       />
       {error && (

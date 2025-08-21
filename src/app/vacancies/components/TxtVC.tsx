@@ -20,7 +20,7 @@ export const TxtVC = () => {
           visible: { opacity: 1, y: 0 },
         }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-black font-cygre leading-tight text-[clamp(2rem,8vw,6rem)]"
+        className="text-black dark:text-white font-cygre leading-tight text-[clamp(2rem,8vw,6rem)]"
       >
         хотите у нас работать?
       </motion.div>
@@ -30,7 +30,7 @@ export const TxtVC = () => {
           visible: { opacity: 1, y: 0 },
         }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-        className="mt-4 text-black font-cygre leading-snug text-[clamp(0.95rem,2.2vw,1.125rem)]"
+        className="mt-4 text-black dark:text-white font-cygre leading-snug text-[clamp(0.95rem,2.2vw,1.125rem)]"
       >
         присылайте резюме на hzcompanyteam@gmail.com
       </motion.div>
