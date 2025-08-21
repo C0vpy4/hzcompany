@@ -44,7 +44,7 @@ export const Vacancies = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`relative w-full bg-white border border-black px-4 sm:px-6 lg:px-8 py-6 will-change-transform ${stickyClass}`}
+        className={`relative w-full bg-white dark:bg-black border border-black dark:border-white px-4 sm:px-6 lg:px-8 py-6 will-change-transform ${stickyClass}`}
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <h3 className="text-black dark:text-white font-cygre leading-tight text-[clamp(2rem,6vw,6rem)]">

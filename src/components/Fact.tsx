@@ -18,14 +18,14 @@ export const Fact = () => {
         ref={sectionRef}
         className="font-cygre relative  flex flex-col items-start justify-start px-4 sm:px-20 "
       >
-        <div className="w-full text-center text-black dark:text-white text-[clamp(2rem,7vw,8rem)] font-cygre leading-tight break-words">
+        <div className="w-full text-center text-black dark:text-white text-[clamp(1.75rem,6vw,6rem)] font-cygre leading-tight break-words">
           <span>каждый продукт - вера </span>
           <span className="text-neutral-500">в нас,</span>
         </div>
-        <div className="w-full text-end text-black dark:text-white text-[clamp(2rem,7vw,8rem)] font-cygre leading-tight break-words">
+        <div className="w-full text-end text-black dark:text-white text-[clamp(1.75rem,6vw,6rem)] font-cygre leading-tight break-words">
           в каждого человека по отдельности,
         </div>
-        <div className="w-full text-right text-neutral-500 dark:text-neutral-400 text-[clamp(2rem,7vw,8rem)] font-cygre leading-tight break-words">
+        <div className="w-full text-right text-neutral-500 dark:text-neutral-400 text-[clamp(1.75rem,6vw,6rem)] font-cygre leading-tight break-words">
           технологии и качество
         </div>
 
