@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-type ThemeMode = "light" | "dark" | "system";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState<ThemeMode>("system");
+  const [mounted, setMounted] = useState(false);
+  const [theme, setThemeState] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -18,57 +18,24 @@ export const Header = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useLayoutEffect(() => {
-    try {
-      const saved =
-        (localStorage.getItem("theme") as ThemeMode | null) ?? "system";
-      setMode(saved);
-      applyMode(saved);
-    } catch {}
-  }, []);
-
   useEffect(() => {
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "theme") {
-        const val = (e.newValue as ThemeMode | null) ?? "system";
-        setMode(val);
-        applyMode(val);
-      }
-    };
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    const onMedia = () => {
-      const stored =
-        (localStorage.getItem("theme") as ThemeMode | null) ?? "system";
-      if (stored === "system") applyMode("system");
-    };
-    window.addEventListener("storage", onStorage);
-    mql.addEventListener("change", onMedia);
-    return () => {
-      window.removeEventListener("storage", onStorage);
-      mql.removeEventListener("change", onMedia);
-    };
+    setMounted(true);
+    try {
+      const saved = localStorage.getItem("theme");
+      setThemeState(saved);
+    } catch {}
   }, []);
 
-  const applyMode = (m: ThemeMode) => {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const enableDark = m === "dark" || (m === "system" && prefersDark);
-    document.documentElement.classList.toggle("dark", enableDark);
-  };
-
-  const setTheme = (m: ThemeMode) => {
-    try {
-      setMode(m);
-      localStorage.setItem("theme", m);
-      applyMode(m);
-    } catch {}
-  };
+  // Кнопка циклично меняет тему: light <-> dark (без system)
 
   const cycleTheme = () => {
-    const next: ThemeMode =
-      mode === "light" ? "dark" : mode === "dark" ? "system" : "light";
-    setTheme(next);
+    const current = theme ?? "light";
+    const next = current === "light" ? "dark" : "light";
+    try {
+      localStorage.setItem("theme", next);
+      setThemeState(next);
+      document.documentElement.classList.toggle("dark", next === "dark");
+    } catch {}
   };
 
   useEffect(() => {
@@ -177,24 +144,22 @@ export const Header = () => {
                   >
                     вакансии
                   </a>
-                  <button
-                    type="button"
-                    onClick={cycleTheme}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        cycleTheme();
-                      }
-                    }}
-                    className="mt-2 text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity cursor-pointer"
-                    aria-label="Переключить тему"
-                  >
-                    {mode === "light"
-                      ? "Светлая"
-                      : mode === "dark"
-                      ? "Тёмная"
-                      : "Системная"}
-                  </button>
+                  {mounted && (
+                    <button
+                      type="button"
+                      onClick={cycleTheme}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          cycleTheme();
+                        }
+                      }}
+                      className="opacity-0 mt-2 text-black dark:text-white text-base font-cygre leading-none  transition-opacity cursor-pointer"
+                      aria-label="Переключить тему"
+                    >
+                      {(theme ?? "light") === "light" ? "Светлая" : "Тёмная"}
+                    </button>
+                  )}
                 </div>
 
                 <div className="flex flex-col items-center justify-center space-y-4">

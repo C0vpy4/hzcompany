@@ -7,7 +7,7 @@ export const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   return (
-    <div className="font-cygre flex justify-center items-center flex-col p-20 w-300  min-h-screen  max-h-full max-w-full">
+    <div className="font-cygre flex justify-center items-center flex-col p-20 w-full  min-h-screen  max-h-full max-w-full">
       <div className="justify-center absolute top-25 sm:top-15 text-black dark:text-white sm:text-8xl text-4xl font-cygre leading-[94.74px]">
         hzcompany
       </div>

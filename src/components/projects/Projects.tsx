@@ -11,7 +11,7 @@ export const Projects = () => {
         year="soon"
         imageSrc="/projects/hzlogistiks.png"
       />
-      <Project title="HZhouse" year="soon" imageSrc="/projects/3.png" />
+      <Project title="HZhouse" year="soon" imageSrc="/projects/hzbank.png" />
       <div className="w-full">
         <div className="relative w-full mx-auto">
           <div className="flex items-start justify-between px-2 sm:px-0">

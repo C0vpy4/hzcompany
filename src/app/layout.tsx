@@ -26,9 +26,12 @@ export default function RootLayout({
       lang="ru"
       className={`${GeistSans.variable} ${GeistMono.variable} ${cygre.variable}`}
     >
-      <body className="min-h-screen h-full font-cygre antialiased sm:px-20 px-2 py-10 bg-white text-black dark:bg-black dark:text-white">
+      <body
+        suppressHydrationWarning
+        className="min-h-screen h-full font-cygre antialiased sm:px-20 px-2 py-10 bg-white text-black dark:bg-black dark:text-white"
+      >
         <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var s=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var useSystem=(s===null||s==='system');var d=(s==='dark')||(useSystem&&m);var c=document.documentElement.classList;c.toggle('dark', d);}catch(e){}})();`}
+          {`(function(){try{var s=localStorage.getItem('theme');var d=(s==='dark');if(s===null){d=false;/* default light */}document.documentElement.classList.toggle('dark', d);}catch(e){}})();`}
         </Script>
         <Header />
         {children}
