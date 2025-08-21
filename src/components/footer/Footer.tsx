@@ -98,7 +98,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-4 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-black dark:text-white text-base font-cygre px-4 sm:px-6 lg:px-8">
+      <div className="mt-4 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-black dark:text-white text-base font-cygre px-4 sm:px-6 lg:px-20">
         <div>designed by Ivan Peter</div>
         <div>@ hzcompany 2025</div>
         <div>все права защищены</div>

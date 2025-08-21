@@ -55,7 +55,7 @@ export const Header = () => {
 
   return (
     <div className="fixed inset-x-0 top-0 z-[100] pt-4 bg-white dark:bg-black">
-      <div className="relative mx-auto w-full  sm:px-20 px-2 flex justify-between py-3 пк">
+      <div className="relative mx-auto w-full  sm:px-20 px-2 flex justify-between py-3 items-center">
         <Link
           href="/"
           className="w-20 h-10 relative block cursor-pointer group"
