@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -22,9 +23,25 @@ export const Header = () => {
     setMounted(true);
     try {
       const saved = localStorage.getItem("theme");
-      setThemeState(saved);
+      if (!saved) {
+        localStorage.setItem("theme", "light");
+        setThemeState("light");
+      } else {
+        setThemeState(saved);
+      }
     } catch {}
   }, []);
+
+  // Синхронизация состояния темы с классом DOM
+  useEffect(() => {
+    if (!mounted || theme === null) return;
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme, mounted]);
 
   // Кнопка циклично меняет тему: light <-> dark (без system)
 
@@ -34,7 +51,6 @@ export const Header = () => {
     try {
       localStorage.setItem("theme", next);
       setThemeState(next);
-      document.documentElement.classList.toggle("dark", next === "dark");
     } catch {}
   };
 
@@ -55,16 +71,25 @@ export const Header = () => {
 
   return (
     <div className="fixed inset-x-0 top-0 z-[100] pt-4 bg-white dark:bg-black">
-      <div className="relative mx-auto w-full  sm:px-20 px-2 flex justify-between py-3 items-center">
+      <div className="relative mx-auto w-full sm:px-20 px-2 flex justify-between py-3 items-center">
         <Link
           href="/"
           className="w-20 h-10 relative block cursor-pointer group"
           aria-label="На главную"
         >
-          <div className="w-11 h-5 left-[43.08px] top-0 absolute bg-black dark:bg-white border border-black dark:border-white" />
-          <div className="w-10 h-5 left-[21.54px] top-[40px] absolute origin-top-left -rotate-90 bg-black dark:bg-white border border-black dark:border-white" />
-          <div className="w-10 h-5 left-0 top-[40px] absolute origin-top-left -rotate-90 bg-black dark:bg-white border border-black dark:border-white" />
-          <div className="w-11 h-5 left-[43.08px] top-[21.54px] absolute bg-black dark:bg-white border border-black dark:border-white" />
+          <div className="hidden sm:flex items-center justify-center gap-1 h-8">
+            {/* Левая часть - два вертикальных прямоугольника */}
+            <div className="flex gap-1">
+              <div className={`w-[20px] h-10 ${theme === "dark" ? "burger-button-black" : "burger-button-white"}`} />
+              <div className={`w-[20px] h-10 ${theme === "dark" ? "burger-button-black" : "burger-button-white"}`} />
+            </div>
+            
+            {/* Правая часть - два горизонтальных прямоугольника */}
+            <div className="flex flex-col justify-between h-10 gap-1">
+              <div className={`w-10 h-[20px] ${theme === "dark" ? "burger-button-black" : "burger-button-white"}`} />
+              <div className={`w-10 h-[20px] ${theme === "dark" ? "burger-button-black" : "burger-button-white"}`} />
+            </div>
+          </div>
         </Link>
 
         <motion.button
@@ -73,12 +98,14 @@ export const Header = () => {
           onClick={() => setOpen((v) => !v)}
           whileHover={{ scale: 1.1 }}
           ref={buttonRef}
-          className="w-20 h-5 relative"
+          className="w-20 h-5 absolute left-1/2 -translate-x-1/2"
         >
           <span className="sr-only">Открыть меню</span>
 
           <motion.div
-            className="w-20 h-px left-0 right-0 mx-auto top-0 absolute bg-black dark:bg-white"
+            className={`w-20 h-px left-0 right-0 mx-auto top-0 absolute ${
+              theme === "dark" ? "burger-button-black" : "burger-button-white"
+            }`}
             animate={
               open
                 ? { y: 9, rotate: 45, width: "50%" }
@@ -87,7 +114,9 @@ export const Header = () => {
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
           />
           <motion.div
-            className="w-20 h-px left-0 right-0 mx-auto top-[9px] absolute bg-black dark:bg-white"
+            className={`w-20 h-px left-0 right-0 mx-auto top-[9px] absolute ${
+              theme === "dark" ? "burger-button-black" : "burger-button-white"
+            }`}
             animate={
               open
                 ? { opacity: 0, width: "50%" }
@@ -96,7 +125,9 @@ export const Header = () => {
             transition={{ duration: 0.15 }}
           />
           <motion.div
-            className="w-20 h-px left-0 right-0 mx-auto top-[18px] absolute bg-black dark:bg-white"
+            className={`w-20 h-px left-0 right-0 mx-auto top-[18px] absolute ${
+              theme === "dark" ? "burger-button-black" : "burger-button-white"
+            }`}
             animate={
               open
                 ? { y: -9, rotate: -45, width: "50%" }
@@ -154,10 +185,11 @@ export const Header = () => {
                           cycleTheme();
                         }
                       }}
-                      className="opacity-0 mt-2 text-black dark:text-white text-base font-cygre leading-none  transition-opacity cursor-pointer"
+                      className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity cursor-pointer"
                       aria-label="Переключить тему"
                     >
-                      {(theme ?? "light") === "light" ? "Светлая" : "Тёмная"}
+                      тема:{" "}
+                      {(theme ?? "light") === "light" ? "светлая" : "тёмная"}
                     </button>
                   )}
                 </div>
@@ -173,7 +205,7 @@ export const Header = () => {
                     href="tel:+79252283698"
                     className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                   >
-                    +7 (925) 228 36 98
+                    +7 (968) 546 23 59
                   </a>
                   <div className="flex items-center justify-center  flex-col space-y-4">
                     <a
@@ -182,27 +214,14 @@ export const Header = () => {
                     >
                       telegram
                     </a>
-
                     <a
-                      href="https://www.instagram.com/hzpank/"
-                      className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity"
-                    >
-                      instagram
-                    </a>
-                    <a
-                      href="https://x.com/hzpank"
-                      className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity"
-                    >
-                      x
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@hzpank"
+                      href="https://www.youtube.com/@hzcompanik"
                       className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       youtube
                     </a>
                     <a
-                      href="#"
+                      href="https://www.tiktok.com/@hzcompan"
                       className="text-black dark:text-white text-base font-cygre leading-none hover:opacity-70 transition-opacity"
                     >
                       tik tok

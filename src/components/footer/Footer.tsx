@@ -3,9 +3,9 @@ import React from "react";
 export const Footer = () => {
   return (
     <footer className="w-full bg-white dark:bg-black text-black dark:text-white flex flex-col items-center justify-center">
-      <div className="mx-auto w-full max-w-[1210px] px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="flex justify-between flex-col sm:flex-row">
-          <div className="space-y-3">
+      <div className="mx-auto w-full max-w-[100%] px-4 sm:px-2 lg:px-2 py-12 sm:py-16">
+        <div className="flex items-center justify-center md:justify-between flex-col sm:flex-row">
+          <div className="space-y-3 flex flex-col items-center md:items-start">
             <div className="text-black dark:text-white text-base font-cygre lowercase">
               hzcompanyteam@gmail.com
             </div>
@@ -38,67 +38,41 @@ export const Footer = () => {
             </a>
           </div>
 
-          <div className="lg:col-span-7 ml-auto">
-            <div className="mt-4 grid grid-cols-2 sm:grid-cols-2 gap-4 justify-items-center sm:justify-items-end">
+          <div className="w-full flex justify-center md:justify-end">
+            <div className="mt-4 grid grid-cols-3 sm:grid-cols-2 gap-4 justify-items-center">
               <a
-                href="#"
-                aria-label="VK"
+                href="https://www.tiktok.com/@hzcompan"
+                aria-label="TikTok"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center font-cygre lowercase transition-colors border border-black dark:border-white bg-black dark:bg-white text-white dark:text-black hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white"
               >
-                vk
+                tt
               </a>
               <a
                 href="https://t.me/hzcompanypr"
                 aria-label="Telegram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center font-cygre lowercase transition-colors border border-black dark:border-white bg-black dark:bg-white text-white dark:text-black hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white"
               >
                 tg
               </a>
               <a
-                href="https://www.youtube.com/@hzpank"
+                href="https://www.youtube.com/@hzcompanik"
                 aria-label="YouTube"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center font-cygre lowercase transition-colors border border-black dark:border-white bg-black dark:bg-white text-white dark:text-black hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white"
               >
                 yt
               </a>
-              <a
-                href="https://x.com/hzpank"
-                aria-label="X"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-              >
-                x
-              </a>
-              <a
-                href="https://www.instagram.com/hzpank/"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-              >
-                ig
-              </a>
-              <a
-                href="#"
-                aria-label="TikTok"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-16 h-16 sm:w-20 sm:h-20 border border-black dark:border-white flex items-center justify-center text-black dark:text-white font-cygre lowercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-              >
-                tt
-              </a>
+
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-4 w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-black dark:text-white text-base font-cygre px-4 sm:px-6 lg:px-20">
+      <div className="mt-4 w-full flex flex-col sm:flex-row items-center sm:items-center justify-between gap-2 text-black dark:text-white text-base font-cygre px-4 sm:px-6 lg:px-4">
         <div>designed by Ivan Peter</div>
         <div>@ hzcompany 2025</div>
         <div>все права защищены</div>

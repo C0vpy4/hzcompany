@@ -6,7 +6,7 @@ export default function Home() {
       <Hero />
       <Txt />
       <Fact />
-      <Ad />
+      {/* <Ad /> */}
       <Projects />
       <Form />
       <Footer />

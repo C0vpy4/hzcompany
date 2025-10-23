@@ -1,9 +1,73 @@
 @import "tailwindcss";
 
-/* Remove global color variables to avoid overriding Tailwind text colors */
+/* Theme System - Override */
+:root {
+  --theme-bg: #ffffff;
+  --theme-text: #000000;
+  --theme-border: #000000;
+}
 
-html {
-  scroll-behavior: smooth;
+html.dark {
+  --theme-bg: #000000;
+  --theme-text: #ffffff;
+  --theme-border: #ffffff;
+}
+
+/* Force theme colors */
+body {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .font-cygre {
+    font-family: var(--font-cygre), system-ui, sans-serif;
+  }
+}
+
+/* Theme overrides for common elements */
+.text-black, 
+html:not(.dark) .dark\:text-white { 
+  color: #000000 !important; 
+}
+
+html.dark .text-black,
+html.dark .dark\:text-white { 
+  color: #ffffff !important; 
+}
+
+.bg-white,
+html:not(.dark) .dark\:bg-black { 
+  background-color: #ffffff !important; 
+}
+
+html.dark .bg-white,
+html.dark .dark\:bg-black { 
+  background-color: #000000 !important; 
+}
+
+.border-black,
+html:not(.dark) .dark\:border-white { 
+  border-color: #000000 !important; 
+}
+
+html.dark .border-black,
+html.dark .dark\:border-white { 
+  border-color: #ffffff !important; 
+}
+
+/* Header and fixed elements */
+header, .fixed {
+  background-color: var(--theme-bg) !important;
+}
+
+/* Ensure all text inherits theme color */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -12,21 +76,54 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--theme-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: var(--theme-text);
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--theme-bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--theme-border);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #000000 #ffffff;
+  scrollbar-color: var(--theme-text) var(--theme-bg);
+}
+
+.default-button-black{
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.default-button-black-second{
+  background: white;
+  color: black;
+  border: 1px solid white;
+}
+
+
+.default-button-white{
+  background: rgba(255, 255, 255);
+  color: black;
+  border: 1px solid white;
+}
+
+.default-button-white-second{
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
+
+
+.burger-button-white{
+  background: black;
+}
+.burger-button-black{
+  background: white;
 }

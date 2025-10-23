@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useId } from "react";
+import React, { useState, useId, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { sendEmail } from "@/app/actions";
@@ -7,6 +7,7 @@ import { sendEmail } from "@/app/actions";
 export const Form = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [theme, setTheme] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -16,6 +17,18 @@ export const Form = () => {
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("theme");
+      if (!saved) {
+        localStorage.setItem("theme", "light");
+        setTheme("light");
+      } else {
+        setTheme(saved);
+      }
+    } catch {}
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -127,13 +140,15 @@ export const Form = () => {
         <button
           type="submit"
           disabled={sending || sent || !isFormValid}
-          className={`mt-12 w-full h-16 text-white dark:text-black text-base font-cygre leading-none transition-all duration-300 
+          className={`mt-12 w-full h-16 text-base font-cygre leading-none transition-all duration-300 
             ${
               sent
-                ? "bg-green-600 hover:bg-green-700"
+                ? "bg-green-600 hover:bg-green-700 text-white"
                 : sending
-                ? "bg-neutral-600"
-                : "bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200"
+                ? "bg-white/30"
+                : theme === "dark" 
+                  ? "border border-black" 
+                  : "default-button-white border border-black"
             } 
             transform hover:scale-[0.99] active:scale-95 cursor-pointer disabled:cursor-not-allowed`}
         >

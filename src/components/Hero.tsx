@@ -1,11 +1,31 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Hero = () => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const [hoveredButton, setHoveredButton] = useState<"first" | "second" | null>(null);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  useEffect(() => {
+    // Проверяем тему при монтировании
+    const checkTheme = () => {
+      setIsDarkTheme(document.documentElement.classList.contains('dark'));
+    };
+    
+    checkTheme();
+    
+    // Отслеживаем изменения темы
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="font-cygre flex justify-center items-center flex-col p-20 w-full  min-h-screen  max-h-full max-w-full">
       <div className="justify-center absolute top-25 sm:top-15 text-black dark:text-white sm:text-8xl text-4xl font-cygre leading-[94.74px]">
@@ -24,10 +44,14 @@ export const Hero = () => {
           <a href="#form" className="w-full">
             <motion.button
               type="button"
-              className="cursor-pointer w-full h-16 border border-black dark:border-white bg-transparent transition-all duration-300 
-                hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black 
-                group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black"
+              className={`${
+                hoveredButton === "first" || hoveredButton === "second"
+                  ? isDarkTheme ? "default-button-black" : "default-button-white"
+                  : isDarkTheme ? "default-button-black-second" : "default-button-white-second"
+              } cursor-pointer w-full h-16 border border-black dark:border-white bg-transparent transition-all duration-300`}
               aria-label="присоединиться"
+              onMouseEnter={() => setHoveredButton("first")}
+              onMouseLeave={() => setHoveredButton(null)}
               whileHover={{ scale: 0.97 }}
               whileTap={{ scale: 0.9 }}
               transition={{
@@ -38,8 +62,8 @@ export const Hero = () => {
               }}
             >
               <span
-                className="text-black dark:text-white text-base font-cygre leading-none transition-colors duration-300 
-                group-hover:text-white hover:text-white dark:group-hover:text-black dark:hover:text-black"
+                className=" text-base font-cygre leading-none transition-colors duration-300 
+                "
               >
                 присоединиться
               </span>
@@ -48,10 +72,14 @@ export const Hero = () => {
           <a href="#fact" className="w-full">
             <motion.button
               type="button"
-              className="cursor-pointer w-full h-16 border border-black dark:border-white bg-black dark:bg-white transition-all duration-300 
-                hover:bg-transparent hover:text-black dark:hover:bg-transparent dark:hover:text-white
-                group-hover:bg-transparent group-hover:text-black dark:group-hover:bg-transparent dark:group-hover:text-white"
+              className={`${
+                hoveredButton === "first" || hoveredButton === "second"
+                  ? isDarkTheme ? "default-button-black-second" : "default-button-white-second"
+                  : isDarkTheme ? "default-button-black" : "default-button-white"
+              } cursor-pointer w-full h-16 border border-black dark:border-white transition-all duration-300`}
               aria-label="узнать больше"
+              onMouseEnter={() => setHoveredButton("second")}
+              onMouseLeave={() => setHoveredButton(null)}
               whileHover={{ scale: 0.97 }}
               whileTap={{ scale: 0.9 }}
               transition={{
@@ -62,8 +90,8 @@ export const Hero = () => {
               }}
             >
               <span
-                className="text-white dark:text-black text-base font-cygre leading-none transition-colors duration-300 
-                group-hover:text-black hover:text-black dark:group-hover:text-white dark:hover:text-white"
+                className=" text-base font-cygre leading-none transition-colors duration-300 
+                "
               >
                 узнать больше
               </span>

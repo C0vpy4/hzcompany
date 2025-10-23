@@ -6,12 +6,13 @@ type ProjectProps = {
   year: number | string;
   imageSrc: string;
   imageAlt?: string;
+  className?: string;
 };
 
-export const Project = ({ title, year, imageSrc, imageAlt }: ProjectProps) => {
+export const Project = ({ title, year, imageSrc, imageAlt, className }: ProjectProps) => {
   return (
-    <div className="w-full">
-      <div className="relative w-full  mx-auto">
+    <div className={`w-full ${className}`}>
+      <div className="relative w-full mx-auto">
         <div className="flex items-start justify-between px-2 sm:px-0">
           <div className="text-black dark:text-white text-sm sm:text-base font-cygre leading-none">
             {title}
@@ -20,7 +21,7 @@ export const Project = ({ title, year, imageSrc, imageAlt }: ProjectProps) => {
             {year}
           </div>
         </div>
-        <div className="relative mt-2 sm:mt-3 w-full aspect-[900/637] overflow-hidden ">
+        <div className="relative mt-2 sm:mt-3 w-full h-[300px] sm:h-[400px] overflow-hidden">
           <Image
             src={imageSrc}
             alt={imageAlt ?? title}

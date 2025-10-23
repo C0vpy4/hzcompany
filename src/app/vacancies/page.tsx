@@ -4,9 +4,9 @@ import { Footer } from "@/components";
 
 export default function VacanciesPage() {
   return (
-    <div className=" flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <TxtVC />
-      <div className="text-black self-start">доступные ваканси</div>
+      <div className="text-black dark:text-white self-start">доступные вакансии</div>
       <div className="flex flex-col gap-10 w-full">
         <Vacancies text="бухгалтер" right="удалёнка" />
         <Vacancies text="frontend developer" />

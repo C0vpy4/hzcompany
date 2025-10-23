@@ -2,8 +2,6 @@
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type FormData = {
   name: string;
   company: string;
@@ -15,6 +13,14 @@ type FormData = {
 export async function sendEmail(data: FormData) {
   try {
     const { name, company, email, phone, message } = data;
+
+    // Проверяем наличие API ключа
+    if (!process.env.RESEND_API_KEY) {
+      console.warn("RESEND_API_KEY не установлен");
+      return { error: "Email service not configured" };
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: "HZ Company <onboarding@resend.dev>",

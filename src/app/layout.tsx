@@ -4,6 +4,7 @@ import { Header } from "@/shared";
 import { cygre } from "./fonts";
 import { GeistSans, GeistMono } from "geist/font";
 import Script from "next/script";
+import { Footer } from "@/components";
 
 export const viewport = {
   width: "device-width",
@@ -31,7 +32,7 @@ export default function RootLayout({
         className="min-h-screen h-full font-cygre antialiased sm:px-20 px-2 py-10 bg-white text-black dark:bg-black dark:text-white"
       >
         <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var s=localStorage.getItem('theme');var d=(s==='dark');if(s===null){d=false;/* default light */}document.documentElement.classList.toggle('dark', d);}catch(e){}})();`}
+          {`(function(){try{var t=localStorage.getItem('theme');if(!t){localStorage.setItem('theme','light');t='light';}document.documentElement.classList.remove('dark');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})()`}
         </Script>
         <Header />
         {children}
