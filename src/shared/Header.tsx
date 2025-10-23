@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);

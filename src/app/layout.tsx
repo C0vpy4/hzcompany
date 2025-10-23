@@ -4,7 +4,6 @@ import { Header } from "@/shared";
 import { cygre } from "./fonts";
 import { GeistSans, GeistMono } from "geist/font";
 import Script from "next/script";
-import { Footer } from "@/components";
 
 export const viewport = {
   width: "device-width",
