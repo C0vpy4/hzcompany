@@ -11,8 +11,11 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "HZ Company",
-  description: "Современное веб-приложение на Next.js",
+  title: "Hzcompany",
+  description: "HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов. Компания создает экосистему будущего, где технологии, образование и инвестиции работают вместе для развития человека и общества.",
+  icons: {
+    icon: '/icon',
+  },
 };
 
 export default function RootLayout({
