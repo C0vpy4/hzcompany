@@ -4,6 +4,7 @@ import { Header } from "@/shared";
 import { cygre } from "./fonts";
 import { GeistSans, GeistMono } from "geist/font";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport = {
   width: "device-width",
@@ -38,6 +39,7 @@ export default function RootLayout({
         </Script>
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
