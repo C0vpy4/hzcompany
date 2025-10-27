@@ -1,0 +1,47 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Abstract geometric shapes -->
+  <circle cx="100" cy="100" r="60" fill="#333333" opacity="0.3"/>
+  <rect x="1000" y="80" width="120" height="120" fill="#444444" opacity="0.2" transform="rotate(45 1060 140)"/>
+  <polygon points="50,500 150,400 250,500" fill="#555555" opacity="0.2"/>
+  
+  <!-- Main content area -->
+  <rect x="80" y="200" width="1040" height="300" fill="none" stroke="#333333" stroke-width="2" opacity="0.3" rx="20"/>
+  
+  <!-- Logo/Title -->
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="url(#textGradient)">
+    hzcompany
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#cccccc">
+    технологическая организация нового типа
+  </text>
+  
+  <!-- Description -->
+  <text x="600" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#aaaaaa">
+    инфраструктура прозрачного взаимодействия
+  </text>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#aaaaaa">
+    между людьми, задачами и знаниями
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="500" r="8" fill="#666666" opacity="0.6"/>
+  <circle cx="1000" cy="500" r="8" fill="#666666" opacity="0.6"/>
+  <rect x="580" y="480" width="40" height="4" fill="#666666" opacity="0.6"/>
+</svg>
