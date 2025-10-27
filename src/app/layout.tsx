@@ -12,11 +12,91 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Hzcompany",
-  description: "HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов. Компания создает экосистему будущего, где технологии, образование и инвестиции работают вместе для развития человека и общества.",
-  icons: {
-    icon: '/icon',
+  title: {
+    default: "Hzcompany - Инновационный технологический холдинг",
+    template: "%s | Hzcompany"
   },
+  description: "HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов. Компания создает экосистему будущего, где технологии, образование и инвестиции работают вместе для развития человека и общества.",
+  keywords: [
+    "технологии",
+    "инновации", 
+    "образование",
+    "инвестиции",
+    "холдинг",
+    "разработка",
+    "стартапы",
+    "финансы",
+    "производство",
+    "экосистема"
+  ],
+  authors: [{ name: "Hzcompany" }],
+  creator: "Hzcompany",
+  publisher: "Hzcompany",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://hzcompany.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'ru-RU': '/ru',
+      'en-US': '/en',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    url: 'https://hzcompany.com',
+    siteName: 'Hzcompany',
+    title: 'Hzcompany - Инновационный технологический холдинг',
+    description: 'HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hzcompany - Инновационный технологический холдинг',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hzcompany - Инновационный технологический холдинг',
+    description: 'HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов.',
+    images: ['/twitter-image.jpg'],
+    creator: '@hzcompany',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+  },
+  icons: {
+    icon: [
+      { url: '/icon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#000000' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  category: 'technology',
 };
 
 export default function RootLayout({
@@ -37,6 +117,44 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {`(function(){try{var t=localStorage.getItem('theme');if(!t){localStorage.setItem('theme','light');t='light';}document.documentElement.classList.remove('dark');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})()`}
         </Script>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Hzcompany",
+              "description": "HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов.",
+              "url": "https://hzcompany.com",
+              "logo": "https://hzcompany.com/logo.png",
+              "foundingDate": "2024",
+              "industry": "Technology",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "RU"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "availableLanguage": ["Russian", "English"]
+              },
+              "sameAs": [
+                "https://twitter.com/hzcompany",
+                "https://linkedin.com/company/hzcompany",
+                "https://github.com/hzcompany"
+              ],
+              "knowsAbout": [
+                "Технологии",
+                "Инновации",
+                "Образование",
+                "Инвестиции",
+                "Разработка",
+                "Стартапы"
+              ]
+            })
+          }}
+        />
         <Header />
         {children}
         <Analytics />
