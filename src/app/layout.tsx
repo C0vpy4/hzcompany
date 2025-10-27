@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://hzcompany.com'),
+  metadataBase: new URL('https://hzcompany.vercel.app'),
   alternates: {
     canonical: '/',
     languages: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    url: 'https://hzcompany.com',
+    url: 'https://hzcompany.vercel.app',
     siteName: 'Hzcompany',
     title: 'Hzcompany - Инновационный технологический холдинг',
     description: 'HZcompany — это инновационный холдинг, объединяющий десятки технологических, образовательных, финансовых и производственных проектов.',
